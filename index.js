@@ -17,6 +17,8 @@ const conn = mysql.createConnection({
     console.log(err);
   }
 
+conn.end();
+
 let  gateRandomUser = () =>  {
     return {
       Id: faker.string.uuid(),
