@@ -8,6 +8,14 @@ const conn = mysql.createConnection({
     password: 'binay12#'
   });
   
+  try {
+    conn.query("SHOW TABLES", (err, result) => {
+        if(err) throw err;
+        console.log(result);
+    });
+  } catch (err) {
+    console.log(err);
+  }
 
 let  gateRandomUser = () =>  {
     return {
