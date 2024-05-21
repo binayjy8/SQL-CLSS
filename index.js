@@ -28,6 +28,5 @@ let  gateRandomUser = () =>  {
     };
   }
 
-  console.log(gateRandomUser());
   
   
