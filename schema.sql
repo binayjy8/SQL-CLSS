@@ -1,1 +1,5 @@
 SHOW TABLES;
+
+CREATE TABLE user (
+    id VARCHAR(30) PRIMARY KEY,
+)
