@@ -28,5 +28,5 @@ let  gateRandomUser = () =>  {
     };
   }
 
-  
+  gateRandomUser();
   
