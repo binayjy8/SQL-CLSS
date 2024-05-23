@@ -22,7 +22,7 @@ const conn = mysql.createConnection({
   let data = [];
     for(let i=1; i<=100; i++) {
         data.push(gateRandomUser());
-    };
+    }
 
   try {
     conn.query(q, [data],  (err, result) => {
