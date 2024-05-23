@@ -9,6 +9,7 @@ const conn = mysql.createConnection({
   });
   
     let q = "INSERT INTO  user (id, username, email, password) VALUES (?, ?, ?, ?)";
+    let user
 
   try {
     conn.query(q, (err, result) => {
