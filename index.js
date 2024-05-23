@@ -8,8 +8,11 @@ const conn = mysql.createConnection({
     password: 'binay12#'
   });
   
-    let q = "INSERT INTO  user (id, username, email, password) VALUES (?, ?, ?, ?)";
-    let user = ["121", "Dhawan", "wqer@gmail.com", "qwert"];
+    let q = "INSERT INTO  user (id, username, email, password) VALUES ?";
+    let users = [
+        ["124", "Dhawanb", "wqer@gmail.comb", "qwertb"],
+        ["232", "Dhawanc", "wqer@gmail.comc", "qwertc"],
+    ];
 
   try {
     conn.query(q, user,  (err, result) => {
