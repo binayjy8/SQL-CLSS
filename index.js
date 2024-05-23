@@ -8,8 +8,10 @@ const conn = mysql.createConnection({
     password: 'binay12#'
   });
   
+    let q = "SHOW TABLES";
+
   try {
-    conn.query("SHOW TABLES", (err, result) => {
+    conn.query(q, (err, result) => {
         if(err) throw err;
         console.log(result);
         console.log(result.length);
