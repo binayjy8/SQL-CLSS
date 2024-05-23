@@ -8,7 +8,7 @@ const conn = mysql.createConnection({
     password: 'binay12#'
   });
   
-    let q = "SHOW TABLES";
+    let q = "INSERT INTO  user (id, username, email, password) VALUES (?, ?, ?, ?)";
 
   try {
     conn.query(q, (err, result) => {
