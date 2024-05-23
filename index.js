@@ -19,19 +19,19 @@ const conn = mysql.createConnection({
 
   let q = "INSERT INTO  user (id, username, email, password) VALUES ?";
     
-    let data = [];
+  let data = [];
     for(let i=1; i<=100; i++) {
-        console.log(gateRandomUser());
+        data.push(gateRandomUser());
     };
 
-//   try {
-//     conn.query(q, [data],  (err, result) => {
-//     if(err) throw err;
-//     console.log(result);
-//     });
-//   } catch (err) {
-//     console.log(err);
-//   }
+  try {
+    conn.query(q, [data],  (err, result) => {
+    if(err) throw err;
+    console.log(result);
+    });
+  } catch (err) {
+    console.log(err);
+  }
 
 conn.end();
 
