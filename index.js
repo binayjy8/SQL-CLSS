@@ -8,12 +8,6 @@ const conn = mysql.createConnection({
     password: 'binay12#'
   });
   
-    let q = "INSERT INTO  user (id, username, email, password) VALUES ?";
-    let users = [
-        ["124", "Dhawanb", "wqer@gmail.comb", "qwertb"],
-        ["232", "Dhawanc", "wqer@gmail.comc", "qwertc"],
-    ];
-
   try {
     conn.query(q, [users],  (err, result) => {
     if(err) throw err;
@@ -25,13 +19,21 @@ const conn = mysql.createConnection({
 
 conn.end();
 
+    let q = "INSERT INTO  user (id, username, email, password) VALUES ?";
+    
+    let data = [];
+    for(let i=0; i<=100; i++) {
+        data.push(gateRandomUser());
+    }
+
+
 let  gateRandomUser = () =>  {
-    return {
-      Id: faker.string.uuid(),
-      username: faker.internet.userName(),
-      email: faker.internet.email(),
-      password: faker.internet.password(),
-    };
+    return [
+      faker.string.uuid(),
+      faker.internet.userName(),
+      faker.internet.email(),
+      faker.internet.password(),
+    ];
   }
 
 
