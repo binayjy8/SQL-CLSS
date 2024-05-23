@@ -15,23 +15,23 @@ const conn = mysql.createConnection({
       faker.internet.email(),
       faker.internet.password(),
     ];
-  }
+  };
 
   let q = "INSERT INTO  user (id, username, email, password) VALUES ?";
     
     let data = [];
-    for(let i=0; i<=100; i++) {
-        data.push(gateRandomUser());
-    }
+    for(let i=1; i<=100; i++) {
+        console.log(gateRandomUser());
+    };
 
-  try {
-    conn.query(q, [users],  (err, result) => {
-    if(err) throw err;
-    console.log(result);
-    });
-  } catch (err) {
-    console.log(err);
-  }
+//   try {
+//     conn.query(q, [data],  (err, result) => {
+//     if(err) throw err;
+//     console.log(result);
+//     });
+//   } catch (err) {
+//     console.log(err);
+//   }
 
 conn.end();
 
