@@ -15,7 +15,7 @@ const conn = mysql.createConnection({
     ];
 
   try {
-    conn.query(q, user,  (err, result) => {
+    conn.query(q, [users],  (err, result) => {
     if(err) throw err;
     console.log(result);
     });
