@@ -12,6 +12,7 @@ const conn = mysql.createConnection({
     conn.query("SHOW TABLES", (err, result) => {
         if(err) throw err;
         console.log(result);
+        console.log(result.length);
     });
   } catch (err) {
     console.log(err);
@@ -28,5 +29,5 @@ let  gateRandomUser = () =>  {
     };
   }
 
-  gateRandomUser();
+
   
