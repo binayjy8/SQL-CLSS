@@ -14,6 +14,7 @@ const conn = mysql.createConnection({
         console.log(result);
         console.log(result.length);
         console.log(result[0]);
+        console.log(result[1]);
     });
   } catch (err) {
     console.log(err);
