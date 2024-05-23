@@ -13,6 +13,7 @@ const conn = mysql.createConnection({
         if(err) throw err;
         console.log(result);
         console.log(result.length);
+        console.log(result[0]);
     });
   } catch (err) {
     console.log(err);
