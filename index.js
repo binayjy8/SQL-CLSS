@@ -14,9 +14,6 @@ const conn = mysql.createConnection({
     conn.query(q, (err, result) => {
         if(err) throw err;
         console.log(result);
-        console.log(result.length);
-        console.log(result[0]);
-        console.log(result[1]);
     });
   } catch (err) {
     console.log(err);
