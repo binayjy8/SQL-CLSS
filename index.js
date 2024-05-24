@@ -1,5 +1,7 @@
 const { faker } = require('@faker-js/faker');
 const mysql = require('mysql2');
+const express = require("express");
+const app = express();
 
 const conn = mysql.createConnection({
     host: 'localhost',
