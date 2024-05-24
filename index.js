@@ -37,7 +37,9 @@ const conn = mysql.createConnection({
 
 conn.end();
 
-    
+    app.listen("8080", ()=> {
+        console.log("listening to the port 8080");
+    });
 
 
 
