@@ -5,7 +5,7 @@ const app = express();
 const path = require("path");
 
 app.set("view engine", "ejs");
-app.use("views", path.join(__dirname, "/views"));
+app.set("views", path.join(__dirname, "/views"));
 
 const conn = mysql.createConnection({
     host: 'localhost',
@@ -29,7 +29,7 @@ const conn = mysql.createConnection({
         conn.query(q,  (err, result) => {
         if(err) throw err;
         console.log(result[0]["count(*)"]);
-        res.send("success");
+        res.render("home.ejs");
         });
       } catch (err) {
         console.log(err);
