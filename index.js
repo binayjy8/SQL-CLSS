@@ -3,6 +3,8 @@ const mysql = require('mysql2');
 const express = require("express");
 const app = express();
 
+app.set("view engine", ejs);
+
 const conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
