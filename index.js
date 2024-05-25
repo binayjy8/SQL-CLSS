@@ -20,24 +20,28 @@ const conn = mysql.createConnection({
   };
 
   app.get("/", (req, res)=> {
-    res.send("welcom to home page");
+    let q = `SELECT count(*) FROM user`;
+    try {
+        conn.query(q,  (err, result) => {
+        if(err) throw err;
+        console.log(result[0]["count(*)"]);
+        res.send("success");
+        });
+      } catch (err) {
+        console.log(err);
+        res.send("some err in DB");
+      }
   });
 
-  try {
-    conn.query(q, [data],  (err, result) => {
-    if(err) throw err;
-    console.log(result);
-    });
-  } catch (err) {
-    console.log(err);
-  }
+  
 
-conn.end();
+  app.listen("8080", ()=> {
+    console.log("listening to the port 8080");
+  });
 
-    app.listen("8080", ()=> {
-        console.log("listening to the port 8080");
-    });
-
+    
+    
+    // conn.end();
 
 
 
