@@ -37,7 +37,19 @@ const conn = mysql.createConnection({
       }
   });
 
-  
+  app.get("/user", (req, res) => {
+    let q = `SELECT  * FROM user`;
+    try {
+        conn.query(q,  (err, result) => {
+        if(err) throw err;
+        console.log(result);
+        res.send(result);
+        });
+      } catch (err) {
+        console.log(err);
+        res.send("some err in DB");
+      }
+  })
 
   app.listen("8080", ()=> {
     console.log("listening to the port 8080");
@@ -45,7 +57,7 @@ const conn = mysql.createConnection({
 
     
     
-    // conn.end();
+
 
 
 
