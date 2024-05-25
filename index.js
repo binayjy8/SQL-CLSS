@@ -28,8 +28,8 @@ const conn = mysql.createConnection({
     try {
         conn.query(q,  (err, result) => {
         if(err) throw err;
-        console.log(result[0]["count(*)"]);
-        res.render("home.ejs");
+        let count = result[0]["count(*)"];
+        res.render("home.ejs", { count });
         });
       } catch (err) {
         console.log(err);
