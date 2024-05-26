@@ -67,7 +67,6 @@ const conn = mysql.createConnection({
         console.log(err);
         res.send("some err in DB");
       }
-    res.render("edit.ejs");
   });
 
   app.patch("/user/:id", (req, res) => {
