@@ -18,10 +18,13 @@
             <th>Username</th>
         </tr>
         <tr>
-            <td>123</td>
-            <td>scd@gmail.com</td>
-            <td>kanta</td>
+            <% for(user of users) { %>
+                <td> <%= user.id %> </td>
+                <td> <%= user.email %></td>
+                <td> <%= user.username %></td>
+             <% } %>
         </tr>
     </table>
 </body>
 </html>
+
