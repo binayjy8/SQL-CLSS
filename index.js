@@ -40,10 +40,10 @@ const conn = mysql.createConnection({
   app.get("/user", (req, res) => {
     let q = `SELECT  * FROM user`;
     try {
-        conn.query(q,  (err, result) => {
+        conn.query(q,  (err, users) => {
         if(err) throw err;
         // console.log(result);
-        res.render("showusers.ejs");
+        res.render("showusers.ejs", { users });
         });
       } catch (err) {
         console.log(err);
