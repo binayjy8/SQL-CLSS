@@ -71,6 +71,7 @@ const conn = mysql.createConnection({
 
   app.patch("/user/:id", (req, res) => {
     let {id} = req.params;
+    let{password:formPass, username: newUsername} = req.body;
     let q = `SELECT * FROM user WHERE   id='${id}'`;
     try {
         conn.query(q,  (err, result) => {
