@@ -53,8 +53,8 @@ const conn = mysql.createConnection({
 
   app.get("user/:id/edit", (req, res) => {
     let {id} = req.params;
-    res.render("")
-  })
+    res.render("edit.ejs");
+  });
 
   app.listen("8080", ()=> {
     console.log("listening to the port 8080");
