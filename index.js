@@ -42,8 +42,8 @@ const conn = mysql.createConnection({
     try {
         conn.query(q,  (err, result) => {
         if(err) throw err;
-        console.log(result);
-        res.send(result);
+        // console.log(result);
+        res.render("showusers.ejs");
         });
       } catch (err) {
         console.log(err);
