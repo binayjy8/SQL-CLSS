@@ -51,8 +51,19 @@ const conn = mysql.createConnection({
       }
   });
 
-  app.get("user/:id/edit", (req, res) => {
+  app.get("/user/:id/edit", (req, res) => {
     let {id} = req.params;
+    let q = `SELECT * FROM user WHERE   id='${id}'`;
+    try {
+        conn.query(q,  (err, result) => {
+        if(err) throw err;
+        let user = result[0];
+        res.render("edit.ejs", {user});
+        });
+      } catch (err) {
+        console.log(err);
+        res.send("some err in DB");
+      }
     res.render("edit.ejs");
   });
 
