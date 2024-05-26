@@ -77,6 +77,9 @@ const conn = mysql.createConnection({
         conn.query(q,  (err, result) => {
         if(err) throw err;
         let user = result[0];
+        if(formPass != user.password) {
+            res.send("WRONG password");
+        }
         res.send(user);
         });
       } catch (err) {
