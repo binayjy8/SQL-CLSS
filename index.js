@@ -49,6 +49,11 @@ const conn = mysql.createConnection({
         console.log(err);
         res.send("some err in DB");
       }
+  });
+
+  app.get("user/:id/edit", (req, res) => {
+    let {id} = req.params;
+    res.render("")
   })
 
   app.listen("8080", ()=> {
