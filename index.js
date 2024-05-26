@@ -79,8 +79,13 @@ const conn = mysql.createConnection({
         let user = result[0];
         if(formPass != user.password) {
             res.send("WRONG password");
+        } else {
+            let q2 = `UPDATE user SET username='${newUsername}' WHERE id='${id}'`;
+            conn.query(q2, (err, result) => {
+                if(err) throw err;
+                res.redirect("/user");
+            });
         }
-        res.send(user);
         });
       } catch (err) {
         console.log(err);
