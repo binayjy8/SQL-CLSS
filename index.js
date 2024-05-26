@@ -70,7 +70,18 @@ const conn = mysql.createConnection({
   });
 
   app.patch("/user/:id", (req, res) => {
-    res.send("updated");
+    let {id} = req.params;
+    let q = `SELECT * FROM user WHERE   id='${id}'`;
+    try {
+        conn.query(q,  (err, result) => {
+        if(err) throw err;
+        let user = result[0];
+        res.send(user);
+        });
+      } catch (err) {
+        console.log(err);
+        res.send("some err in DB");
+      }
   });
 
   app.listen("8080", ()=> {
