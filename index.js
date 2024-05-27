@@ -93,7 +93,7 @@ const conn = mysql.createConnection({
       }
   });
 
-  app.patch("")
+  app.patch("/user", (req, res))
 
   app.listen("8080", ()=> {
     console.log("listening to the port 8080");
