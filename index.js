@@ -93,8 +93,8 @@ const conn = mysql.createConnection({
       }
   });
 
-  app.patch("/user", (req, res) => {
-    
+  app.patch("/posts/:id", (req, res) => {
+    let {id} = req.params;
   })
 
   app.listen("8080", ()=> {
